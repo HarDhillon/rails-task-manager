@@ -3,7 +3,8 @@
 <ol>
   <% @tasks.each do |task|%>
   <li>
-    <input type="checkbox"><a href="/index/<%= task.id %>"><%= task.title %></a>
+    <input type="checkbox"><a href="/tasks/<%= task.id %>"><%= task.title %></a>
   </li>
   <% end %>
 </ol>
+<a href="tasks/new">Add New Task</a>
