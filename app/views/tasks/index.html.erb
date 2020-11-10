@@ -1,9 +1,17 @@
-<h1>Tasks</h1>
+<h1 class="pl-4">Tasks</h1>
 
 <ol>
   <% @tasks.each do |task|%>
-  <li>
-    <input type="checkbox"><a href="/tasks/<%= task.id %>"><%= task.title %></a>
+  <li class="d-flex">
+    <%= form_for(task) do |f| %>
+      <%= f.check_box :completed %>
+    <% end %>
+    <a href="/tasks/<%= task.id %>" class="ml-2"><%= task.title %></a>
+    <%= link_to task_path(task),
+            method: :delete,
+            data: { confirm: "Delete #{task.title}?" } do %>
+            <i class="fa fa-trash ml-2" aria-hidden="true"></i>
+            <% end %>
   </li>
   <% end %>
 </ol>

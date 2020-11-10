@@ -1,4 +1,6 @@
 <h2><%= @task.title %></h2>
+<h3><a href="/tasks/<%= @task.id %>/edit">Edit This Task</a></h3>
 <h4><%= @task.details %></h4>
 <p>Completed: <%= @task.completed %></p>
+
 <a href="/tasks">Back To List</a>
