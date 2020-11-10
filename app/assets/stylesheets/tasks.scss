@@ -1,3 +1,55 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+  background-color: #D2D5DD
+}
+
+body > div > div.list-box{
+  display: flex;
+  justify-content: center;
+
+}
+.header{
+  background-color: beige;
+  margin: 0px;
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 20px;
+}
+
+body > div > div.text-center{
+  padding-bottom: 15px;
+}
+
+body > div > div.list-box > div > ol{
+  padding: 0px;
+}
+
+.container {
+  padding: 0px;
+  border: 2px solid black;
+  box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: white;
+}
+
+.task, .fa, a{
+  color: black;
+}
+
+.fa-trash:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: wiggle 0.7s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(4deg); }
+  20% {transform: rotate(-4deg);}
+  40% {transform: rotate(4deg);}
+  60% {transform: rotate(-4deg);}
+  80% {transform: rotate(4deg);}
+  100% {transform: rotate(-4deg);}
+}

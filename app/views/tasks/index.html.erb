@@ -1,18 +1,29 @@
-<h1 class="pl-4">Tasks</h1>
+<div class="container">
+  <div class="header">
+    <h1 class="text-center">Tasks</h1>
+  </div>
+  <div class="list-box">
+    <div class="list-items">
+      <ol>
+        <% @tasks.each do |task|%>
+        <li class="d-flex pb-1">
+          <%= form_for(task) do |f| %>
+            <%= f.check_box :completed %>
+          <% end %>
+          <a href="/tasks/<%= task.id %>" class="ml-2 task"><%= task.title %></a>
+          <%= link_to task_path(task),
+                  method: :delete,
+                  data: { confirm: "Delete #{task.title}?" } do %>
+                  <i class="fa fa-trash ml-2" aria-hidden="true"></i>
+                  <% end %>
+        </li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+  <div class="text-center">
+    <hr>
+    <a href="tasks/new" class="text-center"><i class="fa fa-plus" aria-hidden="true"></i> Add New Task</a>
+  </div>
 
-<ol>
-  <% @tasks.each do |task|%>
-  <li class="d-flex">
-    <%= form_for(task) do |f| %>
-      <%= f.check_box :completed %>
-    <% end %>
-    <a href="/tasks/<%= task.id %>" class="ml-2"><%= task.title %></a>
-    <%= link_to task_path(task),
-            method: :delete,
-            data: { confirm: "Delete #{task.title}?" } do %>
-            <i class="fa fa-trash ml-2" aria-hidden="true"></i>
-            <% end %>
-  </li>
-  <% end %>
-</ol>
-<a href="tasks/new">Add New Task</a>
+</div>
