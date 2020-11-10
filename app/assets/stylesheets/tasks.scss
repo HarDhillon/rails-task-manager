@@ -53,3 +53,13 @@ body > div > div.list-box > div > ol{
   80% {transform: rotate(4deg);}
   100% {transform: rotate(-4deg);}
 }
+
+.details{
+  background-color: #EAECED;
+}
+
+body > div > div.details{
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+}
